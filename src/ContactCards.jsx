@@ -1,7 +1,7 @@
-const ContactCards = ({data}) => {
+const ContactCards = ({ contactList }) => {
   return (
     <>
-      {data?.results?.slice(0, 10).map((contact, index) => (
+      {contactList?.map((contact, index) => (
         <figure className="bg-white text-white h-80 rounded-lg shadow-md" key={index}>
           <img alt="user" className="w-32 h-32 rounded-full mx-auto mt-7" src={contact.picture.large} />
           <figcaption className="text-center mt-5">
