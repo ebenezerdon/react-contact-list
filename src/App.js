@@ -42,6 +42,9 @@ const App = () => {
         </form>
       </section>
       <section className={"grid sm:grid-cols-2 md:grid-cols-4 gap-6 p-20"}>
+        {contactList?.length < 1 && (
+          <h1>No data matches your search</h1>
+        )}
         <ContactCards contactList={contactList}/>
       </section>
     </div>
