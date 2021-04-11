@@ -30,13 +30,14 @@ const App = () => {
   }, [data, filterQuery])
 
   return (
-    <div className={"bg-gray-100 pt-3"}>
+    <div className={"bg-gray-100"}>
       <section>
         <form>
           <input
             type={"text"}
-            placeholder={"type keyword to search..."}
+            placeholder={"type here to filter..."}
             onChange={event => setFilterQuery(event.target.value)}
+            className={"ml-20 mt-6 rounded-md p-2"}
           />
         </form>
       </section>
