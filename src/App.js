@@ -2,8 +2,8 @@ import useFetch from 'react-fetch-hook'
 import ContactCards from './ContactCards'
 
 const App = () => {
-  const url = 'https://randomuser.me/api/'
-  const { data } = useFetch(url+'?results=10')
+  const url = 'https://randomuser.me/api/?results=10'
+  const { data } = useFetch(url)
 
   return (
     <div className={"bg-gray-100"}>
