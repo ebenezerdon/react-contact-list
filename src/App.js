@@ -8,9 +8,6 @@ const App = () => {
   return (
     <div className={"bg-gray-100"}>
       <section className={"grid sm:grid-cols-2 md:grid-cols-4 gap-6 p-20"}>
-        {data?.results.length < 1 && (
-          <h1>No data matches your search</h1>
-        )}
         <ContactCards contactList={data?.results}/>
       </section>
     </div>
