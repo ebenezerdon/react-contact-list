@@ -6,7 +6,7 @@ import ContactModal from './ContactModal'
 
 const App = () => {
   const url = 'https://randomuser.me/api/?results=200'
-  const { data } = useFetch(url)
+  const { data, isLoading, error } = useFetch(url)
   const [selectedContact, setSelectedContact] = useState(null)
   const [contactList, setContactList] = useState()
   const [filterQuery, setFilterQuery] = useState()
@@ -45,13 +45,12 @@ const App = () => {
         </form>
       </section>
       <section className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 p-20">
-        {contactList?.length < 1 && (
-          <h1>No data matches your search</h1>
-        )}
-        <ContactCards
-          contactList={contactList}
-          setSelectedContact={setSelectedContact}
-        />
+        {isLoading
+          ? <h1>Fetching data...</h1>
+          : <ContactCards contactList={contactList} setSelectedContact={setSelectedContact} />
+        }
+        {error && <h1>Error fetching data...</h1>}
+        {contactList?.length < 1 && <h1>No data matches your search</h1>}
       </section>
       <AnimatePresence>
         {selectedContact &&
