@@ -13,11 +13,11 @@ const ContactModal = ({ contact, setSelectedContact }) => {
             {contact.name.title} {contact.name.first} {contact.name.last}
           </p>
           <div className="grid grid-cols-2 text-gray-600 gap-x-0">
-            <p className="font-medium">username:</p>
+            <p className="font-medium">Username:</p>
             <p>{contact.login.username}</p>
-            <p className="font-medium">gender:</p>
+            <p className="font-medium">Gender:</p>
             <p>{contact.gender}</p>
-            <p className="font-medium">city:</p>
+            <p className="font-medium">City:</p>
             <p>{contact.location.city}, {contact.location.state}</p>
             <p className="font-medium">Country:</p>
             <p>{contact.location.country}</p>
@@ -25,9 +25,9 @@ const ContactModal = ({ contact, setSelectedContact }) => {
             <p>{contact.location.postcode}</p>
             <p className="font-medium">Phone Number:</p>
             <p>{contact.cell}</p>
-            <p className="font-medium">email:</p>
+            <p className="font-medium">Email:</p>
             <p>{contact.email}</p>
-            <p className="font-medium">age:</p>
+            <p className="font-medium">Age:</p>
             <p>{contact.dob.age}</p>
           </div>
         </div>
