@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const ContactModal = ({ contact, setSelectedContact }) => {
   const closeModal = event => {
     if (event.currentTarget === event.target) {
@@ -8,7 +10,10 @@ const ContactModal = ({ contact, setSelectedContact }) => {
   return (
     <div className="fixed top-0 h-screen w-screen bg-black bg-opacity-10">
       <div className="flex h-screen" onClick={event => closeModal(event)}>
-        <div className="m-auto bg-white rounded-lg shadow-lg px-14 pt-5 pb-10">
+        <motion.div
+          animate={{ scale: [0.7, 1.5, 1] }}
+          className="m-auto bg-white rounded-lg shadow-lg px-14 pt-5 pb-10"
+        >
           <p className="text-center mb-5 text-gray-700 font-semibold text-xl">
             {contact.name.title} {contact.name.first} {contact.name.last}
           </p>
@@ -30,7 +35,7 @@ const ContactModal = ({ contact, setSelectedContact }) => {
             <p className="font-medium">Age:</p>
             <p>{contact.dob.age}</p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
