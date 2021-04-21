@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import useFetch from 'react-fetch-hook'
 import ContactCards from './ContactCards'
@@ -16,11 +17,14 @@ const App = () => {
           setSelectedContact={setSelectedContact}
         />
       </section>
-      {selectedContact &&
-        <ContactModal
-          contact={selectedContact}
-          setSelectedContact={setSelectedContact} />
-      }
+      <AnimatePresence>
+        {selectedContact &&
+          <ContactModal
+            contact={selectedContact}
+            setSelectedContact={setSelectedContact}
+          />
+        }
+      </AnimatePresence>
     </div>
   )
 }

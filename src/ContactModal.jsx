@@ -12,6 +12,7 @@ const ContactModal = ({ contact, setSelectedContact }) => {
       <div className="flex h-screen" onClick={event => closeModal(event)}>
         <motion.div
           animate={{ scale: [0.7, 1.5, 1] }}
+          exit={{ scale: 0 }}
           className="m-auto bg-white rounded-lg shadow-lg px-14 pt-5 pb-10"
         >
           <p className="text-center mb-5 text-gray-700 font-semibold text-xl">
