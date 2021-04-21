@@ -2,10 +2,11 @@ import { motion } from 'framer-motion'
 
 const ContactModal = ({ contact, setSelectedContact }) => {
   const closeModal = event => {
-    if (event.currentTarget === event.target) {
-      setSelectedContact(null)
-    }
+    if(event.keyCode === 27) setSelectedContact(null)
+    if (event.currentTarget === event.target) setSelectedContact(null)
   }
+
+  window.addEventListener('keydown', event => closeModal(event))
 
   return (
     <div className="fixed top-0 h-screen w-screen bg-black bg-opacity-10">
