@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react'
 
 const App = () => {
   const url = 'https://randomuser.me/api/'
-  const { isLoading, data, error } = useFetch(url+'?results=200')
+  const { data } = useFetch(url+'?results=200')
   const [contactList, setContactList] = useState()
   const [filterQuery, setFilterQuery] = useState()
 
